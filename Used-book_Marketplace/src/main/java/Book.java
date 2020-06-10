@@ -69,7 +69,7 @@ public class Book {
 
     // make a form of the information of a book
     public String information() {
-        return (name + ":" + author + ":" + publisher + ":" + year + ":" + cost + ":" + status);
+        return (sellerId + ":" + ISBN + ":" + name + ":" + author + ":" + publisher + ":" + year + ":" + cost + ":" + status);
     }
     public void printBookInformation() {
         System.out.println(this.information());
