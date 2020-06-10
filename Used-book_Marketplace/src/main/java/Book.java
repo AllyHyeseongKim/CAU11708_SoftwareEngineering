@@ -1,6 +1,7 @@
 public class Book {
 
     // private variables of the information of a book
+    private String sellerId;
     private String ISBN;
     private String name;
     private String author;
@@ -10,6 +11,13 @@ public class Book {
     private String status;
 
     // make setters, getters of private variables of the information of a book
+    public void setSellerId(String sellerId) {
+        this.sellerId = sellerId;
+    }
+    public String getSellerId() {
+        return sellerId;
+    }
+
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
