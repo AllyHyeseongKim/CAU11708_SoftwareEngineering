@@ -24,11 +24,12 @@ public class UserListFile {
                     JSONObject userObject = (JSONObject) object;
 
                     user = parser(userObject);
-                    userList.addUser(user);
+                    this.userList.addUser(user);
                 }
+                return this.userList;
             } else {
                 System.out.println("Empty json");
-                return userList;
+                return this.userList;
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
