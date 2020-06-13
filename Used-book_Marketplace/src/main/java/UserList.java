@@ -14,18 +14,29 @@ public class UserList {
         }
     }
 
-    public boolean isAdmin(String id, String password) {
-        if (id == "admin" && password == "nayana") {
+    public boolean isAdmin(String id, char[] secretPassword) {
+        String password = "";
+        for (int i = 0; i < secretPassword.length; i++) {
+            password += Character.toString(secretPassword[i]);
+        }
+        System.out.println(password);
+
+        if (id.equals("admin") && password.equals("nayana")) {
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean login(String id, String password) {
+    public boolean login(String id, char[] secretPassword) {
+        String password = "";
+        for (int i = 0; i < secretPassword.length; i++) {
+            password += Character.toString(secretPassword[i]);
+        }
+
         for (User user : this.userList) {
-            if (user.getId() == id) {
-                if (user.getPassword() == password) {
+            if (user.getId().equals(id)) {
+                if (user.getPassword().equals(password)) {
                     return true;
                 } else {
                     System.out.println("Wrong Password");
