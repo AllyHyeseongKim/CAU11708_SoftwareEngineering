@@ -14,6 +14,29 @@ public class UserList {
         }
     }
 
+    public boolean isAdmin(String id, String password) {
+        if (id == "admin" && password == "nayana") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean login(String id, String password) {
+        for (User user : this.userList) {
+            if (user.getId() == id) {
+                if (user.getPassword() == password) {
+                    return true;
+                } else {
+                    System.out.println("Wrong Password");
+                    return false;
+                }
+            }
+        }
+        System.out.println("Id not found");
+        return false;
+    }
+
     public void addUser(User addedUser) {
         userList.add(addedUser);
     }
