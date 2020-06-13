@@ -6,6 +6,7 @@ public class User {
     private String password;
     private String phoneNumber;
     private String emailAddress;
+    private String status;
 
     // make setters, getters of private variables of the information of a user
     public void setId(String userId) {
@@ -42,6 +43,9 @@ public class User {
     public String getEmailAddress() {
         return emailAddress;
     }
+
+    public void setStatus(String status) {this.status = status; }
+    public String getStatus() {return status; }
 
     // make a form of the information of a book
     public String information() {
