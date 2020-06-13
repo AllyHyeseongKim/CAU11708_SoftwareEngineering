@@ -7,11 +7,15 @@ public class BookList {
 
     public Book getBook(int index) {
         try {
-            return bookList.get(index);
+            return this.bookList.get(index);
         } catch (ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
             throw e;
         }
+    }
+
+    public int getNumBooks() {
+        return this.bookList.size();
     }
 
     public BookList searchBook(String searchFilter, String searchString) {
