@@ -42,4 +42,12 @@ public class User {
     public String getEmailAddress() {
         return emailAddress;
     }
+
+    // make a form of the information of a book
+    public String information() {
+        return (id + " : " + name + " : " + password + " : " + phoneNumber + " : " + emailAddress);
+    }
+    public void printUserInformation() {
+        System.out.println(this.information());
+    }
 }
