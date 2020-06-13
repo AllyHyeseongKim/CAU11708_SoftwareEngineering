@@ -27,12 +27,25 @@ public class UserList {
         }
     }
 
-    public void deleteUser(int index) {
-        try {
-            userList.remove(index);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
-            throw e;
+    public BookList deleteUser(int index, BookList bookList) {
+        if (this.getUser(index).getStatus() == "deactivated") {
+            try {
+                for (int i = 0; i < bookList.getNumBooks(); i++) {
+                    if (bookList.getBook(i).getSellerId() == this.getUser(index).getId()) {
+                        bookList.deleteBook(i);
+                        i--;
+                    }
+                }
+                userList.remove(index);
+                return bookList;
+            } catch (ArrayIndexOutOfBoundsException e) {
+                e.printStackTrace();
+                throw e;
+            }
+        } else {
+            System.out.println("The User is activated.");
+            System.out.println("Not available to delete the user.");
+            return bookList;
         }
     }
 
