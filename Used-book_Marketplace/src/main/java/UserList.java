@@ -19,7 +19,6 @@ public class UserList {
         for (int i = 0; i < secretPassword.length; i++) {
             password += Character.toString(secretPassword[i]);
         }
-        System.out.println(password);
 
         if (id.equals("admin") && password.equals("nayana")) {
             return true;
