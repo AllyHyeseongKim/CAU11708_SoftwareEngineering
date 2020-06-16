@@ -44,8 +44,25 @@ public class User {
         return emailAddress;
     }
 
-    public void setStatus(String status) {this.status = status; }
+    public void setStatus(String status) { this.status = status; }
     public String getStatus() {return status; }
+
+    public boolean isRightPhoneNumber() {
+        String regex = "^01(?:0|1|[6-9])(\\d{3}|\\d{4})(\\d{4})$";
+        if (this.phoneNumber.matches(regex)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public boolean isRightEmailAddress() {
+        String regex = "^[_a-zA-Z0-9-\\.]+@[\\.a-zA-Z0-9-]+\\.[a-zA-Z]+$";
+        if (this.emailAddress.matches(regex)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     // make a form of the information of a book
     public String information() {

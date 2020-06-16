@@ -3,11 +3,11 @@ public class Book {
     // private variables of the information of a book
     private String sellerId;
     private String ISBN;
-    private String name;
+    private String title;
     private String author;
     private String publisher;
     private String year;
-    private String cost;
+    private String price;
     private String status;
 
     // make setters, getters of private variables of the information of a book
@@ -15,61 +15,61 @@ public class Book {
         this.sellerId = sellerId;
     }
     public String getSellerId() {
-        return sellerId;
+        return this.sellerId;
     }
 
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
     public String getISBN() {
-        return ISBN;
+        return this.ISBN;
     }
 
-    public void setName(String bookName) {
-        this.name = bookName;
+    public void setTitle(String bookTitle) {
+        this.title = bookTitle;
     }
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return this.title;
     }
 
     public void setAuthor(String bookAuthor) {
         this.author = bookAuthor;
     }
     public String getAuthor() {
-        return author;
+        return this.author;
     }
 
     public void setPublisher(String bookPublisher) {
         this.publisher = bookPublisher;
     }
     public String getPublisher() {
-        return publisher;
+        return this.publisher;
     }
 
     public void setYear(String bookYear) {
         this.year = bookYear;
     }
     public String getYear() {
-        return year;
+        return this.year;
     }
 
-    public void setCost(String bookCost) {
-        this.cost = bookCost;
+    public void setPrice(String bookPrice) {
+        this.price = bookPrice;
     }
-    public String getCost() {
-        return cost;
+    public String getPrice() {
+        return this.price;
     }
 
     public void setStatus(String bookStatus) {
         this.status = bookStatus;
     }
     public String getStatus() {
-        return status;
+        return this.status;
     }
 
     // make a form of the information of a book
     public String information() {
-        return (sellerId + " : " + ISBN + " : " + name + " : " + author + " : " + publisher + " : " + year + " : " + cost + " : " + status);
+        return ("* Book Title: " + title + "\n* ISBN: " + ISBN + "\n* Author: " + author + "\n* Publisher: " + publisher + "\n* Publish Year: " + year);
     }
     public void printBookInformation() {
         System.out.println(this.information());
