@@ -6,6 +6,7 @@ public class User {
     private String password;
     private String phoneNumber;
     private String emailAddress;
+    private String status;
 
     // make setters, getters of private variables of the information of a user
     public void setId(String userId) {
@@ -41,5 +42,33 @@ public class User {
     }
     public String getEmailAddress() {
         return emailAddress;
+    }
+
+    public void setStatus(String status) { this.status = status; }
+    public String getStatus() {return status; }
+
+    public boolean isRightPhoneNumber() {
+        String regex = "^01(?:0|1|[6-9])(\\d{3}|\\d{4})(\\d{4})$";
+        if (this.phoneNumber.matches(regex)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public boolean isRightEmailAddress() {
+        String regex = "^[_a-zA-Z0-9-\\.]+@[\\.a-zA-Z0-9-]+\\.[a-zA-Z]+$";
+        if (this.emailAddress.matches(regex)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // make a form of the information of a book
+    public String information() {
+        return (id + " : " + name + " : " + password + " : " + phoneNumber + " : " + emailAddress);
+    }
+    public void printUserInformation() {
+        System.out.println(this.information());
     }
 }
