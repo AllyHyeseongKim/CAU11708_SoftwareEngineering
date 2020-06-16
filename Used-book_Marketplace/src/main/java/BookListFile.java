@@ -11,11 +11,13 @@ public class BookListFile {
 
     public static String filePath;
 
-    public BookList readJSON(String filePath) {
+    public BookListFile(String filePath) {
         this.filePath = filePath;
+    }
+
+    public BookList readJSON() {
 
         JSONParser parser = new JSONParser();
-        Book book = null;
 
         try {
             JSONArray books = (JSONArray) parser.parse(new FileReader(filePath));
@@ -23,12 +25,11 @@ public class BookListFile {
                 for (Object object : books) {
                     JSONObject bookObject = (JSONObject) object;
 
-                    book = parser(bookObject);
+                    Book book = parser(bookObject);
                     bookList.addBook(book);
                 }
             } else {
                 System.out.println("Empty json");
-                return bookList;
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -37,7 +38,7 @@ public class BookListFile {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return null;
+        return bookList;
     }
 
     private Book parser(JSONObject jsonObject) {
@@ -45,15 +46,46 @@ public class BookListFile {
 
         book.setSellerId((String) jsonObject.get("sellerId"));
         book.setISBN((String) jsonObject.get("ISBN"));
-        book.setName((String) jsonObject.get("name"));
+        book.setTitle((String) jsonObject.get("title"));
         book.setAuthor((String) jsonObject.get("author"));
         book.setPublisher((String) jsonObject.get("publisher"));
         book.setYear((String) jsonObject.get("year"));
-        book.setCost((String) jsonObject.get("cost"));
+        book.setPrice((String) jsonObject.get("price"));
         book.setStatus((String) jsonObject.get("status"));
 
         book.printBookInformation();
 
         return book;
+    }
+
+    public void writeJSON(BookList bookList) {
+        this.bookList = bookList;
+
+        JSONArray books = new JSONArray();
+
+        for (int i = 0; i < this.bookList.getNumBooks(); i++) {
+            Book book = this.bookList.getBook(i);
+
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("sellerId", book.getSellerId());
+            jsonObject.put("ISBN", book.getISBN());
+            jsonObject.put("title", book.getTitle());
+            jsonObject.put("author", book.getAuthor());
+            jsonObject.put("publisher", book.getPublisher());
+            jsonObject.put("year", book.getYear());
+            jsonObject.put("price", book.getPrice());
+            jsonObject.put("status", book.getStatus());
+
+            books.add(jsonObject);
+        }
+
+        try {
+            FileWriter fileWriter = new FileWriter(this.filePath);
+            fileWriter.write(books.toJSONString());
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
