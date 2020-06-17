@@ -5,9 +5,9 @@ import static org.junit.Assert.assertThat;
 
 
 public class BookAPIFileTest {
-    @Test
-    public void test_add() {
-        BookListFile bookListFile = new BookListFile("data/test-user.json");
+    @org.junit.jupiter.api.Test
+    void readJSON() {
+        BookListFile bookListFile = new BookListFile("data/test-bookAPI.json");
 
         BookList bookList = new BookList();
 
@@ -45,9 +45,25 @@ public class BookAPIFileTest {
         book.setPrice(price);
         book.setStatus(status);
 
-        bookList.addBook(book);
+        BookList readJSONResult = bookAPIFile.readJSON("data/test-bookAPI.json");
+        Book bookResult = readJSONResult.getBook(0);
 
-        BookList readJSONResult = bookAPIFile.readJSON("data/book-test");
-        assertThat(readJSONResult, is(book));
+        String idResult = bookResult.getSellerId();
+        String ISBNResult = bookResult.getISBN();
+        String titleResult = bookResult.getTitle();
+        String authorResult = bookResult.getAuthor();
+        String publisherResult = bookResult.getPublisher();
+        String yearResult = bookResult.getYear();
+        String priceResult = bookResult.getPrice();
+        String statusResult = bookResult.getStatus();
+
+        assertThat(idResult, is(id));
+        assertThat(ISBNResult, is(ISBN));
+        assertThat(titleResult, is(title));
+        assertThat(authorResult, is(author));
+        assertThat(publisherResult, is(publisher));
+        assertThat(yearResult, is(year));
+        assertThat(priceResult, is(price));
+        assertThat(statusResult, is(status));
     }
 }

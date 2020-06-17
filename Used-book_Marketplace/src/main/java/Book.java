@@ -71,7 +71,4 @@ public class Book {
     public String information() {
         return ("* Book Title: " + title + "\n* ISBN: " + ISBN + "\n* Author: " + author + "\n* Publisher: " + publisher + "\n* Publish Year: " + year);
     }
-    public void printBookInformation() {
-        System.out.println(this.information());
-    }
 }

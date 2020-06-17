@@ -53,8 +53,6 @@ public class BookListFile {
         book.setPrice((String) jsonObject.get("price"));
         book.setStatus((String) jsonObject.get("status"));
 
-        book.printBookInformation();
-
         return book;
     }
 

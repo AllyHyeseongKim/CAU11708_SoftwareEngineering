@@ -1,9 +1,1 @@
-[
-  {
-    "id": "ally1",
-    "name": "AllyHyeseongKim",
-    "password": "12345",
-    "phoneNumber": "01054027381",
-    "emailAddress": "ally3k@cau.ac.kr"
-  }
-]
+[{"password":"12345","emailAddress":"ally@cau.ac.kr","phoneNumber":"01054027381","name":"AllyHyeseongKim","id":"ally1","status":"activated"},{"password":"12345","emailAddress":"ally@cau.ac.kr","phoneNumber":"01054027381","name":"AllyHyeseongKim","id":"ally2","status":"activated"},{"password":"12345","emailAddress":"ally@cau.ac.kr","phoneNumber":"01054027381","name":"AllyHyeseongKim","id":"ally3","status":"activated"}]

@@ -52,8 +52,6 @@ public class BookAPIFile {
         book.setPublisher((String) jsonObject.get("publisher"));
         book.setYear((String) jsonObject.get("year"));
 
-        book.printBookInformation();
-
         return book;
     }
 }

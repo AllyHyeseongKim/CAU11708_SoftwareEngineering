@@ -1,158 +1,263 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="846c335e-4070-4498-a0a0-aba45d90d0a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/book.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/book.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/user.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BookAPIFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BookAPIFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BookList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BookList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BookListFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BookListFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UserList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UserListFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserListFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BookAPIFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookAPIFileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BookListFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookListFileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BookListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTest.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/.gradle/" />
-    <ignored path="$PROJECT_DIR$/build/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
-    <option name="isMigrated" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/HelloWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-              <folding>
-                <element signature="e#69#70#0" expanded="true" />
-                <element signature="e#94#95#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package.json" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/HelloWorld.java" />
-      </list>
-    </option>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1038" />
-    <option name="y" value="23" />
-    <option name="width" value="1522" />
-    <option name="height" value="1062" />
-  </component>
+  <component name="ProjectId" id="1dFS4IrZhfG47txP468YDYJJZnv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Used-book_Marketplace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Used-book_Marketplace" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Used-book_Marketplace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Used-book_Marketplace" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Used-book_Marketplace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Used-book_Marketplace" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="Used-book_Marketplace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Used-book_Marketplace" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HelloWorld" />
-      <module name="Used-book_Marketplace_main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.BookListTest">
+    <configuration name="BookAPIFileTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;BookAPIFileTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
+    <configuration name="BookListFileTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;BookListFileTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="BookListTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;BookListTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Used-book_Marketplace" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;UserTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.Used-book_Marketplace" />
+      <item itemvalue="Gradle.BookAPIFileTest" />
+      <item itemvalue="Gradle.BookListFileTest" />
+      <item itemvalue="Gradle.BookListTest" />
+      <item itemvalue="Gradle.UserTest" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloWorld" />
+        <item itemvalue="Gradle.BookListTest" />
+        <item itemvalue="Gradle.UserTest" />
+        <item itemvalue="Gradle.BookListFileTest" />
+        <item itemvalue="Gradle.BookAPIFileTest" />
+        <item itemvalue="Gradle.Used-book_Marketplace" />
       </list>
     </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -163,87 +268,210 @@
       <updated>1591720168190</updated>
       <workItem from="1591720169323" duration="72000" />
       <workItem from="1591720251363" duration="471000" />
+      <workItem from="1591793395389" duration="6302000" />
+      <workItem from="1592019160085" duration="18832000" />
+      <workItem from="1592105887011" duration="29693000" />
+      <workItem from="1592187923014" duration="75124000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="543000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="1038" y="23" width="1522" height="1062" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20608108" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3298969" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.3298969" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3298969" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-453" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/HelloWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#69#70#0" expanded="true" />
-            <element signature="e#94#95#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="956" y="328" key="#Test" timestamp="1592294454549">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="956" y="328" key="#Test/0.0.2560.1440@0.0.2560.1440" timestamp="1592294454549" />
+    <state x="966" y="319" key="#Tests_in_'Used-book_Marketplace.test'" timestamp="1592335550962">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="966" y="319" key="#Tests_in_'Used-book_Marketplace.test'/0.0.2560.1440@0.0.2560.1440" timestamp="1592335550962" />
+    <state x="966" y="319" key="#UserTest" timestamp="1592335706479">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="966" y="319" key="#UserTest/0.0.2560.1440@0.0.2560.1440" timestamp="1592335706479" />
+    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592337075935">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="744" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1592337075935" />
+    <state x="3017" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1592235647560">
+      <screen x="2560" y="23" width="1288" height="923" />
+    </state>
+    <state x="3017" y="198" key="#com.intellij.ide.util.MemberChooser/2560.23.1288.923/0.23.2560.1337@2560.23.1288.923" timestamp="1592235647560" />
+    <state x="1017" y="506" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592294433919">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1017" y="506" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1592294433919" />
+    <state x="1018" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592291479515">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1018" y="474" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1592291479515" />
+    <state x="1015" y="310" key="Diagram.Print.Preview.Dialog" timestamp="1592330591992">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1015" y="310" key="Diagram.Print.Preview.Dialog/0.0.2560.1440@0.0.2560.1440" timestamp="1592330591992" />
+    <state x="1134" y="452" key="EnvironmentVariablesDialog" timestamp="1592337010542">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1134" y="452" key="EnvironmentVariablesDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1592337010542" />
+    <state width="2518" height="275" key="GridCell.Tab.0.bottom" timestamp="1592386484675">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="275" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1592386484675" />
+    <state width="1461" height="186" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1592236587323" />
+    <state width="1246" height="186" key="GridCell.Tab.0.bottom/2560.23.1288.923/0.23.2560.1337@2560.23.1288.923" timestamp="1592235357809" />
+    <state width="1246" height="186" key="GridCell.Tab.0.bottom/2560.23.1288.923/0.23.2560.1338@2560.23.1288.923" timestamp="1592198627198" />
+    <state width="1246" height="186" key="GridCell.Tab.0.bottom/2560.23.1288.923/0.23.2560.1340@2560.23.1288.923" timestamp="1592198644175" />
+    <state width="1246" height="186" key="GridCell.Tab.0.bottom/2560.23.1288.923/0.23.2560.1342@2560.23.1288.923" timestamp="1592198659602" />
+    <state width="2518" height="275" key="GridCell.Tab.0.center" timestamp="1592386484675">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="275" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1592386484675" />
+    <state width="1461" height="186" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1592236587322" />
+    <state width="1246" height="186" key="GridCell.Tab.0.center/2560.23.1288.923/0.23.2560.1337@2560.23.1288.923" timestamp="1592235357808" />
+    <state width="1246" height="186" key="GridCell.Tab.0.center/2560.23.1288.923/0.23.2560.1338@2560.23.1288.923" timestamp="1592198627197" />
+    <state width="1246" height="186" key="GridCell.Tab.0.center/2560.23.1288.923/0.23.2560.1340@2560.23.1288.923" timestamp="1592198644174" />
+    <state width="1246" height="186" key="GridCell.Tab.0.center/2560.23.1288.923/0.23.2560.1342@2560.23.1288.923" timestamp="1592198659601" />
+    <state width="2518" height="275" key="GridCell.Tab.0.left" timestamp="1592386484674">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="275" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1592386484674" />
+    <state width="1461" height="186" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1592236587322" />
+    <state width="1246" height="186" key="GridCell.Tab.0.left/2560.23.1288.923/0.23.2560.1337@2560.23.1288.923" timestamp="1592235357808" />
+    <state width="1246" height="186" key="GridCell.Tab.0.left/2560.23.1288.923/0.23.2560.1338@2560.23.1288.923" timestamp="1592198627197" />
+    <state width="1246" height="186" key="GridCell.Tab.0.left/2560.23.1288.923/0.23.2560.1340@2560.23.1288.923" timestamp="1592198644174" />
+    <state width="1246" height="186" key="GridCell.Tab.0.left/2560.23.1288.923/0.23.2560.1342@2560.23.1288.923" timestamp="1592198659601" />
+    <state width="2518" height="275" key="GridCell.Tab.0.right" timestamp="1592386484675">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="275" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1592386484675" />
+    <state width="1461" height="186" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1592236587323" />
+    <state width="1246" height="186" key="GridCell.Tab.0.right/2560.23.1288.923/0.23.2560.1337@2560.23.1288.923" timestamp="1592235357809" />
+    <state width="1246" height="186" key="GridCell.Tab.0.right/2560.23.1288.923/0.23.2560.1338@2560.23.1288.923" timestamp="1592198627198" />
+    <state width="1246" height="186" key="GridCell.Tab.0.right/2560.23.1288.923/0.23.2560.1340@2560.23.1288.923" timestamp="1592198644175" />
+    <state width="1246" height="186" key="GridCell.Tab.0.right/2560.23.1288.923/0.23.2560.1342@2560.23.1288.923" timestamp="1592198659602" />
+    <state width="2518" height="520" key="GridCell.Tab.1.bottom" timestamp="1592326516224">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="520" key="GridCell.Tab.1.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1592326516224" />
+    <state width="2518" height="520" key="GridCell.Tab.1.center" timestamp="1592326516223">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="520" key="GridCell.Tab.1.center/0.0.2560.1440@0.0.2560.1440" timestamp="1592326516223" />
+    <state width="2518" height="520" key="GridCell.Tab.1.left" timestamp="1592326516223">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="520" key="GridCell.Tab.1.left/0.0.2560.1440@0.0.2560.1440" timestamp="1592326516223" />
+    <state width="2518" height="520" key="GridCell.Tab.1.right" timestamp="1592326516224">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="520" key="GridCell.Tab.1.right/0.0.2560.1440@0.0.2560.1440" timestamp="1592326516224" />
+    <state x="1137" y="335" key="SettingsEditor" timestamp="1592039094505">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1137" y="335" key="SettingsEditor/0.23.2560.1337@0.23.2560.1337" timestamp="1592039094505" />
+    <state x="977" y="628" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1592336012937">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="977" y="628" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.2560.1440@0.0.2560.1440" timestamp="1592336012937" />
+    <state x="1362" y="0" width="467" height="1440" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1592383605097">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1362" y="0" width="467" height="1440" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1592383605097" />
+    <state x="3418" y="225" width="670" height="467" key="search.everywhere.popup" timestamp="1592189616227">
+      <screen x="2560" y="23" width="1288" height="923" />
+    </state>
+    <state x="1706" y="315" width="670" height="676" key="search.everywhere.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1592041003164" />
+    <state x="3418" y="225" width="670" height="467" key="search.everywhere.popup/2560.23.1288.923/0.23.2560.1337@2560.23.1288.923" timestamp="1592189616227" />
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Used-book_Marketplace_main|Used-book_Marketplace</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: junit:junit:4.12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

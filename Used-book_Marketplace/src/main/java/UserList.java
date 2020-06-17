@@ -116,10 +116,4 @@ public class UserList {
         }
         return false;
     }
-
-    public void printUserList() {
-        for (int i = 0; i < userList.size(); i++) {
-            userList.get(i).printUserInformation();
-        }
-    }
 }

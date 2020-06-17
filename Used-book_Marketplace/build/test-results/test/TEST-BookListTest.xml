@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BookListTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-06-17T09:34:45" hostname="Hyeseongs-iMac.local" time="0.009">
+  <properties/>
+  <testcase name="addBook()" classname="BookListTest" time="0.003"/>
+  <testcase name="searchISBN()" classname="BookListTest" time="0.001"/>
+  <testcase name="searchBooks()" classname="BookListTest" time="0.0"/>
+  <testcase name="getBook()" classname="BookListTest" time="0.003"/>
+  <testcase name="getNumBooks()" classname="BookListTest" time="0.001"/>
+  <testcase name="findIndex()" classname="BookListTest" time="0.0"/>
+  <testcase name="modifyBook()" classname="BookListTest" time="0.0"/>
+  <testcase name="deleteBook()" classname="BookListTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

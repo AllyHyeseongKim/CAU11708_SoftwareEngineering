@@ -29,7 +29,6 @@ public class BookList {
             for (Book book : this.bookList) {
                 if (book.getTitle().equals(searchString)) {
                     searchedBookList.addBook(book);
-                    book.printBookInformation();
                 }
             }
         } else if (searchFilter.equals("ISBN")) {
@@ -111,12 +110,6 @@ public class BookList {
         } catch (ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
             throw e;
-        }
-    }
-
-    public void printBookList() {
-        for (int i = 0; i < bookList.size(); i++) {
-            bookList.get(i).printBookInformation();
         }
     }
 }

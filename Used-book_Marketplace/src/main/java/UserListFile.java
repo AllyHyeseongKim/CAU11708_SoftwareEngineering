@@ -52,8 +52,6 @@ public class UserListFile {
         user.setEmailAddress((String) jsonObject.get("emailAddress"));
         user.setStatus((String) jsonObject.get("status"));
 
-        user.printUserInformation();
-
         return user;
     }
 

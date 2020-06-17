@@ -117,8 +117,6 @@ public class UserFrame extends JFrame{
 
     private void addBookManagementPanel() {
         BookList userBookList = this.bookList.searchBooks("Seller Id", this.userId);
-        System.out.println("!!!");
-        userBookList.printBookList();
         BookInformationPanel bookInformationPanel = new BookInformationPanel(this.bookList, userBookList, this.userId);
 
         AddBookPanel addBookPanel = new AddBookPanel(bookInformationPanel);

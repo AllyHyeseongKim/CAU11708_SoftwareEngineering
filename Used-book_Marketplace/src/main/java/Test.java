@@ -4,8 +4,6 @@ public class Test {
         BookList bookList = bookListFile.readJSON();
         UserListFile userListFile = new UserListFile("data/user.json");
         UserList userList = userListFile.readJSON();
-        //LoginFrame loginFrame = new LoginFrame(userList, bookList);
-        //AdminFrame adminFrame = new AdminFrame(userList, bookList);
-        UserFrame userFrame = new UserFrame("ally1", bookList, userList);
+        LoginFrame loginFrame = new LoginFrame(userList, bookList);
     }
 }
