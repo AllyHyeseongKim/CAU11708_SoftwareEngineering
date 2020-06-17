@@ -1,4 +1,9 @@
+package com.AllyHyeseongKim.usedbookmarketplace.controller;
+
 import java.io.*;
+import java.util.ArrayList;
+
+import com.AllyHyeseongKim.usedbookmarketplace.model.Book;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -7,7 +12,7 @@ import org.json.simple.parser.ParseException;
 
 public class BookListFile {
 
-    private BookList bookList = new BookList();
+    private ArrayList<Book> bookList = new ArrayList<>();
 
     public static String filePath;
 
@@ -15,7 +20,7 @@ public class BookListFile {
         this.filePath = filePath;
     }
 
-    public BookList readJSON() {
+    public ArrayList<Book> readJSON() {
 
         JSONParser parser = new JSONParser();
 
@@ -26,7 +31,7 @@ public class BookListFile {
                     JSONObject bookObject = (JSONObject) object;
 
                     Book book = parser(bookObject);
-                    bookList.addBook(book);
+                    this.bookList.add(book);
                 }
             } else {
                 System.out.println("Empty json");
@@ -38,7 +43,7 @@ public class BookListFile {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return bookList;
+        return this.bookList;
     }
 
     private Book parser(JSONObject jsonObject) {
@@ -56,13 +61,13 @@ public class BookListFile {
         return book;
     }
 
-    public void writeJSON(BookList bookList) {
+    public void writeJSON(ArrayList<Book> bookList) {
         this.bookList = bookList;
 
         JSONArray books = new JSONArray();
 
-        for (int i = 0; i < this.bookList.getNumBooks(); i++) {
-            Book book = this.bookList.getBook(i);
+        for (int i = 0; i < this.bookList.size(); i++) {
+            Book book = this.bookList.get(i);
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("sellerId", book.getSellerId());

@@ -1,3 +1,6 @@
+package com.AllyHyeseongKim.usedbookmarketplace.model;
+
+
 public class Book {
 
     // private variables of the information of a book

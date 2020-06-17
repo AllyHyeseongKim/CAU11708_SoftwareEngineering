@@ -1,4 +1,10 @@
+package com.AllyHyeseongKim.usedbookmarketplace.controller;
+
+import com.AllyHyeseongKim.usedbookmarketplace.model.User;
+
 import java.io.*;
+import java.util.ArrayList;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -7,7 +13,7 @@ import org.json.simple.parser.ParseException;
 
 public class UserListFile {
 
-    private UserList userList = new UserList();
+    private ArrayList<User> userList = new ArrayList<>();
 
     public static String filePath;
 
@@ -15,7 +21,7 @@ public class UserListFile {
         this.filePath = filePath;
     }
 
-    public UserList readJSON() {
+    public ArrayList<User> readJSON() {
         JSONParser parser = new JSONParser();
 
         try {
@@ -25,7 +31,7 @@ public class UserListFile {
                     JSONObject userObject = (JSONObject) object;
 
                     User user = parser(userObject);
-                    this.userList.addUser(user);
+                    this.userList.add(user);
                 }
                 return this.userList;
             } else {
@@ -55,13 +61,13 @@ public class UserListFile {
         return user;
     }
 
-    public void writeJSON(UserList userList) {
+    public void writeJSON(ArrayList<User> userList) {
         this.userList = userList;
 
         JSONArray users = new JSONArray();
 
-        for (int i = 0; i < this.userList.getNumUsers(); i++) {
-            User user = this.userList.getUser(i);
+        for (int i = 0; i < this.userList.size(); i++) {
+            User user = this.userList.get(i);
 
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("id", user.getId());

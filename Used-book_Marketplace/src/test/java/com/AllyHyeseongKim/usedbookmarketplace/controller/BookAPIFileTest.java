@@ -1,27 +1,35 @@
-import org.junit.Test;
+package com.AllyHyeseongKim.usedbookmarketplace.controller;
+
+import com.AllyHyeseongKim.usedbookmarketplace.model.Book;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 
-public class BookAPIFileTest {
-    @org.junit.jupiter.api.Test
-    void readJSON() {
-        BookListFile bookListFile = new BookListFile("data/test-bookAPI.json");
+class BookAPIFileTest {
+    String filePath = "data/test-bookAPI.json";
 
-        BookList bookList = new BookList();
+    BookListFile bookListFile = new BookListFile(this.filePath);
 
-        Book book = new Book();
+    ArrayList<Book> bookList = new ArrayList<>();
 
-        String id = "id";
-        String ISBN = "ISBN";
-        String title = "title";
-        String author = "author";
-        String publisher = "publisher";
-        String year = "year";
-        String price = "price";
-        String status = "status";
+    Book book = new Book();
 
+    String id = "id";
+    String ISBN = "ISBN";
+    String title = "title";
+    String author = "author";
+    String publisher = "publisher";
+    String year = "year";
+    String price = "price";
+    String status = "status";
+
+    @BeforeEach
+    void setUp() {
         book.setSellerId(id);
         book.setISBN(ISBN);
         book.setTitle(title);
@@ -31,10 +39,13 @@ public class BookAPIFileTest {
         book.setPrice(price);
         book.setStatus(status);
 
-        bookList.addBook(book);
+        bookList.add(book);
 
         bookListFile.writeJSON(bookList);
+    }
 
+    @Test
+    void readJSON() {
         BookAPIFile bookAPIFile = new BookAPIFile();
 
         id = "";
@@ -45,8 +56,8 @@ public class BookAPIFileTest {
         book.setPrice(price);
         book.setStatus(status);
 
-        BookList readJSONResult = bookAPIFile.readJSON("data/test-bookAPI.json");
-        Book bookResult = readJSONResult.getBook(0);
+        ArrayList<Book> readJSONResult = bookAPIFile.readJSON(this.filePath);
+        Book bookResult = readJSONResult.get(0);
 
         String idResult = bookResult.getSellerId();
         String ISBNResult = bookResult.getISBN();

@@ -1,19 +1,22 @@
+package com.AllyHyeseongKim.usedbookmarketplace.view;
+
 import javax.swing.*;
 import java.awt.*;
 
 
-public class AdminFrame extends JFrame {
-    private UserList userList;
-    private BookList bookList;
-
+public class AdminView extends JFrame {
     private JPanel bookManagementPanel = new JPanel();
     private JPanel userManagementPanel = new JPanel();
 
-    private JTabbedPane adminTab = new JTabbedPane();
+    public BookInformationPanel bookInformationPanel;
+    public UserInformationPanel userInformationPanel;
 
-    public AdminFrame(UserList userList, BookList bookList) {
-        this.userList = userList;
-        this.bookList = bookList;
+    public JTabbedPane adminTab = new JTabbedPane();
+
+    public AdminView(BookInformationPanel bookInformationPanel, UserInformationPanel userInformationPanel) {
+
+        this.bookInformationPanel = bookInformationPanel;
+        this.userInformationPanel = userInformationPanel;
 
         this.setLayout(new BorderLayout());
         this.setSize(1330, 1000);
@@ -23,11 +26,11 @@ public class AdminFrame extends JFrame {
         this.setTitle("[Admin Page] Used-book Marketplace");
         this.addBookManagementPanel();
         this.addUserManagementPanel();
-        this.addMenuBar();
+        this.addTabBar();
         this.setVisible(true);
     }
 
-    private void addMenuBar() {
+    private void addTabBar() {
         adminTab.setSize(1330, 20);
         adminTab.addTab("Book Management", this.bookManagementPanel);
         adminTab.addTab("User Management", this.userManagementPanel);
@@ -38,13 +41,13 @@ public class AdminFrame extends JFrame {
 
     private void addBookManagementPanel() {
         bookManagementPanel.setLayout(new GridLayout(1, 1));
-        bookManagementPanel.add(new BookInformationPanel(this.bookList));
+        bookManagementPanel.add(bookInformationPanel);
         bookManagementPanel.setVisible(true);
     }
 
     private void addUserManagementPanel() {
         userManagementPanel.setLayout(new GridLayout(1, 1));
-        userManagementPanel.add(new UserInformationPanel(this.userList, this.bookList));
+        userManagementPanel.add(userInformationPanel);
         userManagementPanel.setVisible(true);
     }
 }

@@ -1,12 +1,10 @@
+package com.AllyHyeseongKim.usedbookmarketplace.view;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class AddBookPanel extends JPanel {
-    private JPanel bookInformationPanel;
-
     private JPanel bookInformationLabelPanel = new JPanel();
     private JPanel bookInformationTextFieldPanel = new JPanel();
 
@@ -17,52 +15,22 @@ public class AddBookPanel extends JPanel {
     private JLabel priceLabel = new JLabel("Price (Won)");
     private JLabel statusLabel = new JLabel("Status");
     private JLabel blankLabel = new JLabel("");
-    private JTextField titleTextField = new JTextField();
-    private JTextField authorTextField = new JTextField();
-    private JTextField publisherTextField = new JTextField();
-    private JTextField yearTextField = new JTextField();
-    private JTextField priceTextField = new JTextField();
+    public JTextField titleTextField = new JTextField();
+    public JTextField authorTextField = new JTextField();
+    public JTextField publisherTextField = new JTextField();
+    public JTextField yearTextField = new JTextField();
+    public JTextField priceTextField = new JTextField();
 
     private String[] status= {"Excellent", "Good", "Fair"};
-    private JComboBox statusComboBox = new JComboBox(status);
+    public JComboBox statusComboBox = new JComboBox(status);
 
-    private JButton addBookButton = new JButton("Add Book");
+    public JButton addBookButton = new JButton("Add Book");
 
-    public AddBookPanel(BookInformationPanel bookInformationPanel) {
-        this.bookInformationPanel = bookInformationPanel;
-
+    public AddBookPanel() {
         this.setLayout(new BorderLayout());
         addLabels();
         addTextFields();
         this.add(addBookButton, "East");
-
-        addBookButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (titleTextField.getText().equals("")) {
-                    JOptionPane.showMessageDialog(null, "FAILED: Please enter the title of the book.", "Error Message", JOptionPane.PLAIN_MESSAGE);
-                } else {
-                    Book book = new Book();
-                    book.setSellerId("");
-                    book.setISBN("");
-                    book.setTitle(titleTextField.getText());
-                    book.setAuthor(authorTextField.getText());
-                    book.setPublisher(publisherTextField.getText());
-                    book.setYear(yearTextField.getText());
-                    book.setPrice(priceTextField.getText());
-                    book.setStatus((String) statusComboBox.getSelectedItem());
-
-                    bookInformationPanel.addBook(book);
-
-                    titleTextField.setText("");
-                    authorTextField.setText("");
-                    publisherTextField.setText("");
-                    yearTextField.setText("");
-                    priceTextField.setText("");
-                    statusComboBox.setSelectedItem("Excellent");
-                }
-            }
-        });
 
         this.setVisible(true);
     }

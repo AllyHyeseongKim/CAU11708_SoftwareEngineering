@@ -1,3 +1,6 @@
+package com.AllyHyeseongKim.usedbookmarketplace.controller;
+
+import com.AllyHyeseongKim.usedbookmarketplace.model.Book;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -6,14 +9,16 @@ import org.json.simple.parser.ParseException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+
 
 public class BookAPIFile {
 
-    private BookList bookList = new BookList();
+    private ArrayList<Book> bookList = new ArrayList<>();
 
     public static String filePath;
 
-    public BookList readJSON(String filePath) {
+    public ArrayList<Book> readJSON(String filePath) {
         this.filePath = filePath;
 
         JSONParser parser = new JSONParser();
@@ -25,7 +30,7 @@ public class BookAPIFile {
                     JSONObject bookObject = (JSONObject) object;
 
                     Book book = parser(bookObject);
-                    bookList.addBook(book);
+                    this.bookList.add(book);
                 }
             } else {
                 System.out.println("Empty json");
@@ -37,7 +42,7 @@ public class BookAPIFile {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return bookList;
+        return this.bookList;
     }
 
     private Book parser(JSONObject jsonObject) {

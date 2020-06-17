@@ -1,3 +1,5 @@
+package com.AllyHyeseongKim.usedbookmarketplace.model;
+
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.hamcrest.CoreMatchers.is;
