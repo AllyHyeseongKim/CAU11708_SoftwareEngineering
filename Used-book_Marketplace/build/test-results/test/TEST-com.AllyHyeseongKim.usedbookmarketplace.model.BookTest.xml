@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2020-06-17T18:57:32" hostname="Hyeseongs-iMac.local" time="0.016">
+  <properties/>
+  <testcase name="setPublisher()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.006"/>
+  <testcase name="setSellerId()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.001"/>
+  <testcase name="getSellerId()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="getISBN()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="getYear()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="setAuthor()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="getAuthor()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.001"/>
+  <testcase name="setStatus()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="getStatus()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.001"/>
+  <testcase name="setPrice()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="setTitle()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.001"/>
+  <testcase name="getPublisher()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="getPrice()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="getTitle()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="information()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="setISBN()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <testcase name="setYear()" classname="com.AllyHyeseongKim.usedbookmarketplace.model.BookTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
