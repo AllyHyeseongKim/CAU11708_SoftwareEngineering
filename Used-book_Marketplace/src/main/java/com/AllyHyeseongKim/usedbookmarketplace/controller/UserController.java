@@ -56,7 +56,26 @@ public class UserController implements ChangeListener, ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             int row = Integer.valueOf(e.getActionCommand());
-            modifyBook(row);
+
+            BookListFile bookListFile = new BookListFile("data/book.json");
+
+            Book modifiedBook = new Book();
+
+            modifiedBook.setSellerId((String) userBookInformationPanel.jTable.getValueAt(row, 0));
+            modifiedBook.setISBN((String) userBookInformationPanel.jTable.getValueAt(row, 1));
+            modifiedBook.setTitle((String) userBookInformationPanel.jTable.getValueAt(row, 2));
+            modifiedBook.setAuthor((String) userBookInformationPanel.jTable.getValueAt(row, 3));
+            modifiedBook.setPublisher((String) userBookInformationPanel.jTable.getValueAt(row, 4));
+            modifiedBook.setYear((String) userBookInformationPanel.jTable.getValueAt(row, 5));
+            modifiedBook.setPrice((String) userBookInformationPanel.jTable.getValueAt(row, 6));
+            modifiedBook.setStatus((String) userBookInformationPanel.jTable.getValueAt(row, 7));
+
+            modifyBook(row, modifiedBook);
+
+            bookListFile.writeJSON(bookList);
+
+            JOptionPane.showMessageDialog(null, "SUCCESS: Book modified.", "Success Message", JOptionPane.PLAIN_MESSAGE);
+
         }
     };
 
@@ -67,7 +86,7 @@ public class UserController implements ChangeListener, ActionListener {
         BookListFile bookListFile = new BookListFile("data/book.json");
         this.bookList = bookListFile.readJSON();
 
-        this.userBookList = searchBooks("Seller Id", this.userId);
+        this.userBookList = searchBooks("Seller Id", this.userId, this.bookList);
 
         this.addBookPanel = new AddBookPanel();
         this.addBookPanel.statusComboBox.addActionListener(this);
@@ -108,7 +127,42 @@ public class UserController implements ChangeListener, ActionListener {
                 book.setPrice(this.addBookPanel.priceTextField.getText());
                 book.setStatus((String) this.addBookPanel.statusComboBox.getSelectedItem());
 
-                addBook(book);
+                Book searchedBook = searchAPI(book);
+
+                String input = null;
+                if (searchedBook != null) {
+                    int yesNoButton = JOptionPane.YES_NO_OPTION;
+                    String message = "RECOMMENDATION:\n" + searchedBook.information() + "\nIs it a right information?";
+                    int result = JOptionPane.showConfirmDialog(null, message, "Information Check", yesNoButton, JOptionPane.PLAIN_MESSAGE);
+                    if (result == JOptionPane.YES_OPTION) {
+                        int okButton = JOptionPane.DEFAULT_OPTION;
+                        int result2 = JOptionPane.showConfirmDialog(null, "SUCCESS: Book added.", "Success Message", okButton, JOptionPane.PLAIN_MESSAGE);
+                        if (result2 == JOptionPane.OK_OPTION || result2 == JOptionPane.CLOSED_OPTION) {
+                            searchedBook.setSellerId(this.userId);
+                            searchedBook.setPrice(book.getPrice());
+                            searchedBook.setStatus(book.getStatus());
+                            this.bookList = addBook(searchedBook);
+
+                            BookListFile bookListFile = new BookListFile("data/book.json");
+                            bookListFile.writeJSON(this.bookList);
+                        }
+                    } else if (result == JOptionPane.NO_OPTION) {
+                        input = JOptionPane.showInputDialog("ENTER ISBN: Enter the ISBN number.\nIf you don't want to enter the ISBN number, just click the Cancel button.", "ISBN");
+                    }
+                } else {
+                    input = JOptionPane.showInputDialog("ENTER ISBN: No recommendation found.\nIf you don't want to enter the ISBN number, just click the Cancel button.", "ISBN");
+                }
+                book.setSellerId(this.userId);
+                book.setStatus(book.getStatus());
+                if (input != null) {
+                    book.setISBN(input);
+                } else {
+                    book.setISBN("");
+                }
+                this.bookList = addBook(book);
+
+                BookListFile bookListFile = new BookListFile("data/book.json");
+                bookListFile.writeJSON(this.bookList);
 
                 this.addBookPanel.titleTextField.setText("");
                 this.addBookPanel.authorTextField.setText("");
@@ -140,82 +194,29 @@ public class UserController implements ChangeListener, ActionListener {
         bookListFile.writeJSON(this.bookList);
     }
 
-    public Book addBook(Book book) {
-        Book searchedBook = searchAPI(book);
-
-        String input = null;
-        if (searchedBook != null) {
-            int yesNoButton = JOptionPane.YES_NO_OPTION;
-            String message = "RECOMMENDATION:\n" + searchedBook.information() + "\nIs it a right information?";
-            int result = JOptionPane.showConfirmDialog(null, message, "Information Check", yesNoButton, JOptionPane.PLAIN_MESSAGE);
-            if (result == JOptionPane.YES_OPTION) {
-                int okButton = JOptionPane.DEFAULT_OPTION;
-                int result2 = JOptionPane.showConfirmDialog(null, "SUCCESS: Book added.", "Success Message", okButton, JOptionPane.PLAIN_MESSAGE);
-                if (result2 == JOptionPane.OK_OPTION || result2 == JOptionPane.CLOSED_OPTION) {
-                    BookListFile bookListFile = new BookListFile("data/book.json");
-
-                    searchedBook.setSellerId(this.userId);
-                    searchedBook.setPrice(book.getPrice());
-                    searchedBook.setStatus(book.getStatus());
-                    this.userBookList.add(searchedBook);
-                    this.bookList.add(searchedBook);
-                    bookListFile.writeJSON(this.bookList);
-
-                    Object[] object = new Object[10];
-
-                    object[0] = searchedBook.getSellerId();
-                    object[1] = searchedBook.getISBN();
-                    object[2] = searchedBook.getTitle();
-                    object[3] = searchedBook.getAuthor();
-                    object[4] = searchedBook.getPublisher();
-                    object[5] = searchedBook.getYear();
-                    object[6] = searchedBook.getPrice();
-                    object[7] = searchedBook.getStatus();
-                    object[8] = "Modify";
-                    object[9] = "Delete";
-
-                    this.userBookInformationPanel.defaultTableModel.addRow(object);
-
-                    return searchedBook;
-                }
-            } else if (result == JOptionPane.NO_OPTION) {
-                input = JOptionPane.showInputDialog("ENTER ISBN: Enter the ISBN number.\nIf you don't want to enter the ISBN number, just click the Cancel button.", "ISBN");
-            }
-        } else {
-            input = JOptionPane.showInputDialog("ENTER ISBN: No recommendation found.\nIf you don't want to enter the ISBN number, just click the Cancel button.", "ISBN");
-        }
-        BookListFile bookListFile = new BookListFile("data/book.json");
-
-        book.setSellerId(this.userId);
-        book.setStatus(book.getStatus());
-        if (input != null) {
-            book.setISBN(input);
-        } else {
-            book.setISBN("");
-        }
-        this.userBookList.add(book);
-        this.bookList.add(book);
-        bookListFile.writeJSON(this.bookList);
+    protected ArrayList<Book> addBook(Book searchedBook) {
+        this.userBookList.add(searchedBook);
+        this.bookList.add(searchedBook);
 
         Object[] object = new Object[10];
 
-        object[0] = book.getSellerId();
-        object[1] = book.getISBN();
-        object[2] = book.getTitle();
-        object[3] = book.getAuthor();
-        object[4] = book.getPublisher();
-        object[5] = book.getYear();
-        object[6] = book.getPrice();
-        object[7] = book.getStatus();
+        object[0] = searchedBook.getSellerId();
+        object[1] = searchedBook.getISBN();
+        object[2] = searchedBook.getTitle();
+        object[3] = searchedBook.getAuthor();
+        object[4] = searchedBook.getPublisher();
+        object[5] = searchedBook.getYear();
+        object[6] = searchedBook.getPrice();
+        object[7] = searchedBook.getStatus();
         object[8] = "Modify";
         object[9] = "Delete";
 
         this.userBookInformationPanel.defaultTableModel.addRow(object);
 
-        return book;
+        return this.bookList;
     }
 
-    public Book searchAPI(Book searchBook) {
+    protected Book searchAPI(Book searchBook) {
         BookAPIFile bookAPIFile = new BookAPIFile();
         ArrayList<Book> APIBookList = bookAPIFile.readJSON("data/bookAPI.json");
 
@@ -241,41 +242,41 @@ public class UserController implements ChangeListener, ActionListener {
         return null;
     }
 
-    public ArrayList<Book> searchBooks(String searchFilter, String searchString) {
+    protected ArrayList<Book> searchBooks(String searchFilter, String searchString, ArrayList<Book> bookList) {
         ArrayList<Book> searchedBookList = new ArrayList<>();
 
         if (searchFilter.equals("Title")) {
-            for (Book book : this.bookList) {
+            for (Book book : bookList) {
                 if (book.getTitle().equals(searchString)) {
                     searchedBookList.add(book);
                 }
             }
         } else if (searchFilter.equals("ISBN")) {
-            for (Book book : this.bookList) {
+            for (Book book : bookList) {
                 if (book.getISBN().equals(searchString)) {
                     searchedBookList.add(book);
                 }
             }
         } else if (searchFilter.equals("Author")) {
-            for (Book book : this.bookList) {
+            for (Book book : bookList) {
                 if (book.getAuthor().equals(searchString)) {
                     searchedBookList.add(book);
                 }
             }
         } else if (searchFilter.equals("Publisher")) {
-            for (Book book : this.bookList) {
+            for (Book book : bookList) {
                 if (book.getPublisher().equals(searchString)) {
                     searchedBookList.add(book);
                 }
             }
         } else if (searchFilter.equals("Year")) {
-            for (Book book : this.bookList) {
+            for (Book book : bookList) {
                 if (book.getYear().equals(searchString)) {
                     searchedBookList.add(book);
                 }
             }
         } else if (searchFilter.equals("Seller Id")) {
-            for (Book book : this.bookList) {
+            for (Book book : bookList) {
                 if (book.getSellerId().equals(searchString)) {
                     searchedBookList.add(book);
                 }
@@ -291,7 +292,7 @@ public class UserController implements ChangeListener, ActionListener {
         JOptionPane.showMessageDialog(null, "PURCHASE: Email sent to seller (" + seller.getEmailAddress() + ").\n (Sender: " + user.getEmailAddress() + ")", "Success Message", JOptionPane.PLAIN_MESSAGE);
     }
 
-    private User searchUser(String id) {
+    protected User searchUser(String id) {
         User searchedUser = null;
 
         for (User user : this.userList) {
@@ -302,22 +303,9 @@ public class UserController implements ChangeListener, ActionListener {
         return searchedUser;
     }
 
-    private void modifyBook(int row) {
-        BookListFile bookListFile = new BookListFile("data/book.json");
-
+    protected Book modifyBook(int row, Book modifiedBook) {
         Book book = this.userBookList.get(row);
         int index = this.bookList.indexOf(book);
-
-        Book modifiedBook = new Book();
-
-        modifiedBook.setSellerId((String) this.userBookInformationPanel.jTable.getValueAt(row, 0));
-        modifiedBook.setISBN((String) this.userBookInformationPanel.jTable.getValueAt(row, 1));
-        modifiedBook.setTitle((String) this.userBookInformationPanel.jTable.getValueAt(row, 2));
-        modifiedBook.setAuthor((String) this.userBookInformationPanel.jTable.getValueAt(row, 3));
-        modifiedBook.setPublisher((String) this.userBookInformationPanel.jTable.getValueAt(row, 4));
-        modifiedBook.setYear((String) this.userBookInformationPanel.jTable.getValueAt(row, 5));
-        modifiedBook.setPrice((String) this.userBookInformationPanel.jTable.getValueAt(row, 6));
-        modifiedBook.setStatus((String) this.userBookInformationPanel.jTable.getValueAt(row, 7));
 
         try {
             this.userBookList.set(row, modifiedBook);
@@ -326,9 +314,8 @@ public class UserController implements ChangeListener, ActionListener {
             e.printStackTrace();
             throw e;
         }
-        bookListFile.writeJSON(this.bookList);
 
-        JOptionPane.showMessageDialog(null, "SUCCESS: Book modified.", "Success Message", JOptionPane.PLAIN_MESSAGE);
+        return this.bookList.get(index);
     }
 
     private void search() {
@@ -337,7 +324,7 @@ public class UserController implements ChangeListener, ActionListener {
         String selectedFilter = userView.searchFilter.getSelectedItem().toString();
         String searchedText = userView.searchTextField.getText();
         if (!searchedText.equals("")) {
-            searchedBookList = searchBooks(selectedFilter, searchedText);
+            searchedBookList = searchBooks(selectedFilter, searchedText, this.bookList);
         }
         this.bookInformationPanel.removeAll();
         this.bookInformationPanel = new BookInformationPanel(searchedBookList, this.userList, this.purchaseBookAction);
