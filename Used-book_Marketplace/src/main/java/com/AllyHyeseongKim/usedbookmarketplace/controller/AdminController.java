@@ -9,10 +9,11 @@ import com.AllyHyeseongKim.usedbookmarketplace.view.UserInformationPanel;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 
-public class AdminController {
+public class AdminController implements ActionListener {
     private AdminView adminView;
 
     private BookInformationPanel bookInformationPanel;
@@ -78,6 +79,76 @@ public class AdminController {
         this.bookInformationPanel = new BookInformationPanel(this.bookList, this.deleteBookAction);
         this.userInformationPanel = new UserInformationPanel(this.userList, this.bookList, this.deleteUserAction, this.changeStatusAction);
         this.adminView = new AdminView(this.bookInformationPanel, this.userInformationPanel);
+
+        this.adminView.searchButton.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource().equals(this.adminView.searchButton)) {
+            search();
+        }
+    }
+
+    private void search() {
+        ArrayList<Book> searchedBookList = this.bookList;
+
+        String selectedFilter = adminView.searchFilter.getSelectedItem().toString();
+        String searchedText = adminView.searchTextField.getText();
+        if (!searchedText.equals("")) {
+            searchedBookList = searchBooks(selectedFilter, searchedText, this.bookList);
+        }
+        this.bookInformationPanel.removeAll();
+        this.bookInformationPanel = new BookInformationPanel(searchedBookList, this.deleteBookAction);
+        this.bookInformationPanel.setVisible(true);
+
+        adminView.searchBookPanel.add(this.bookInformationPanel, "Center");
+        this.bookInformationPanel.revalidate();
+        this.bookInformationPanel.repaint();
+    }
+
+    protected ArrayList<Book> searchBooks(String searchFilter, String searchString, ArrayList<Book> bookList) {
+        ArrayList<Book> searchedBookList = new ArrayList<>();
+
+        if (searchFilter.equals("Title")) {
+            for (Book book : bookList) {
+                if (book.getTitle().equals(searchString)) {
+                    searchedBookList.add(book);
+                }
+            }
+        } else if (searchFilter.equals("ISBN")) {
+            for (Book book : bookList) {
+                if (book.getISBN().equals(searchString)) {
+                    searchedBookList.add(book);
+                }
+            }
+        } else if (searchFilter.equals("Author")) {
+            for (Book book : bookList) {
+                if (book.getAuthor().equals(searchString)) {
+                    searchedBookList.add(book);
+                }
+            }
+        } else if (searchFilter.equals("Publisher")) {
+            for (Book book : bookList) {
+                if (book.getPublisher().equals(searchString)) {
+                    searchedBookList.add(book);
+                }
+            }
+        } else if (searchFilter.equals("Year")) {
+            for (Book book : bookList) {
+                if (book.getYear().equals(searchString)) {
+                    searchedBookList.add(book);
+                }
+            }
+        } else if (searchFilter.equals("Seller Id")) {
+            for (Book book : bookList) {
+                if (book.getSellerId().equals(searchString)) {
+                    searchedBookList.add(book);
+                }
+            }
+        }
+
+        return searchedBookList;
     }
 
     private void deleteBook(int index) {
