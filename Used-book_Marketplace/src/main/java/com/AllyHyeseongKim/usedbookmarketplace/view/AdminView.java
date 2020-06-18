@@ -5,6 +5,8 @@ import java.awt.*;
 
 
 public class AdminView extends JFrame {
+    public JPanel searchBookPanel = new JPanel();
+    public JPanel searchPanel = new JPanel();
     private JPanel bookManagementPanel = new JPanel();
     private JPanel userManagementPanel = new JPanel();
 
@@ -12,6 +14,11 @@ public class AdminView extends JFrame {
     public UserInformationPanel userInformationPanel;
 
     public JTabbedPane adminTab = new JTabbedPane();
+
+    private String filters[] = {"Title", "ISBN", "Author", "Publisher", "Year", "Seller Id"};
+    public JComboBox<String> searchFilter = new JComboBox<String>(filters);
+    public JTextField searchTextField = new JTextField();
+    public JButton searchButton = new JButton("Search");
 
     public AdminView(BookInformationPanel bookInformationPanel, UserInformationPanel userInformationPanel) {
 
@@ -32,7 +39,7 @@ public class AdminView extends JFrame {
 
     private void addTabBar() {
         adminTab.setSize(1330, 20);
-        adminTab.addTab("Book Management", this.bookManagementPanel);
+        adminTab.addTab("Book Management", this.searchBookPanel);
         adminTab.addTab("User Management", this.userManagementPanel);
         adminTab.setVisible(true);
 
@@ -40,9 +47,22 @@ public class AdminView extends JFrame {
     }
 
     private void addBookManagementPanel() {
-        bookManagementPanel.setLayout(new GridLayout(1, 1));
-        bookManagementPanel.add(bookInformationPanel);
-        bookManagementPanel.setVisible(true);
+        searchBookPanel.setLayout(new BorderLayout());
+        searchBookPanel.setSize(1330, 1000);
+        addSearchPanel();
+        searchBookPanel.add(bookInformationPanel, "Center");
+        searchBookPanel.setVisible(true);
+    }
+
+    private void addSearchPanel() {
+        searchPanel.setLayout(new BorderLayout());
+        searchPanel.setSize(1330, 10);
+        searchPanel.add(searchFilter, "West");
+        searchPanel.add(searchTextField, "Center");
+        searchPanel.add(searchButton, "East");
+        searchPanel.setVisible(true);
+
+        searchBookPanel.add(searchPanel, "North");
     }
 
     private void addUserManagementPanel() {
