@@ -7,21 +7,19 @@ import javax.swing.border.*;
 import javax.swing.table.*;
 
 
-public class ButtonColumn extends AbstractCellEditor implements TableCellRenderer, TableCellEditor, ActionListener, MouseListener
-{
-    private JTable table;
+public class ButtonColumn extends AbstractCellEditor implements TableCellRenderer, TableCellEditor, ActionListener, MouseListener {
+    private JTable jTable;
     private Action action;
     private Border originalBorder;
     private Border focusBorder;
 
     private JButton renderButton;
     private JButton editButton;
-    private Object editorValue;
+    private Object editValue;
     private boolean isButtonColumnEditor;
 
-    public ButtonColumn(JTable table, Action action, int column)
-    {
-        this.table = table;
+    public ButtonColumn(JTable jTable, Action action, int column) {
+        this.jTable = jTable;
         this.action = action;
 
         renderButton = new JButton();
@@ -31,83 +29,62 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
         originalBorder = editButton.getBorder();
         setFocusBorder( new LineBorder(Color.BLUE) );
 
-        TableColumnModel columnModel = table.getColumnModel();
+        TableColumnModel columnModel = jTable.getColumnModel();
         columnModel.getColumn(column).setCellRenderer( this );
         columnModel.getColumn(column).setCellEditor( this );
-        table.addMouseListener( this );
+        jTable.addMouseListener( this );
     }
 
-    public void setFocusBorder(Border focusBorder)
-    {
+    public void setFocusBorder(Border focusBorder) {
         this.focusBorder = focusBorder;
         editButton.setBorder( focusBorder );
     }
 
     @Override
-    public Component getTableCellEditorComponent(
-            JTable table, Object value, boolean isSelected, int row, int column)
-    {
-        if (value == null)
-        {
+    public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+        if (value == null) {
             editButton.setText( "" );
             editButton.setIcon( null );
-        }
-        else if (value instanceof Icon)
-        {
+        } else if (value instanceof Icon) {
             editButton.setText( "" );
             editButton.setIcon( (Icon)value );
-        }
-        else
-        {
+        } else {
             editButton.setText( value.toString() );
             editButton.setIcon( null );
         }
 
-        this.editorValue = value;
+        this.editValue = value;
         return editButton;
     }
 
     @Override
     public Object getCellEditorValue()
     {
-        return editorValue;
+        return editValue;
     }
 
-    public Component getTableCellRendererComponent(
-            JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
-    {
-        if (isSelected)
-        {
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+        if (isSelected) {
             renderButton.setForeground(table.getSelectionForeground());
             renderButton.setBackground(table.getSelectionBackground());
-        }
-        else
-        {
+        } else {
             renderButton.setForeground(table.getForeground());
             renderButton.setBackground(UIManager.getColor("Button.background"));
         }
 
-        if (hasFocus)
-        {
+        if (hasFocus) {
             renderButton.setBorder( focusBorder );
-        }
-        else
-        {
+        } else {
             renderButton.setBorder( originalBorder );
         }
 
-        if (value == null)
-        {
+        if (value == null) {
             renderButton.setText( "" );
             renderButton.setIcon( null );
-        }
-        else if (value instanceof Icon)
-        {
+        } else if (value instanceof Icon) {
             renderButton.setText( "" );
             renderButton.setIcon( (Icon)value );
-        }
-        else
-        {
+        } else {
             renderButton.setText( value.toString() );
             renderButton.setIcon( null );
         }
@@ -115,32 +92,27 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
         return renderButton;
     }
 
-    public void actionPerformed(ActionEvent e)
-    {
-        int row = table.convertRowIndexToModel( table.getEditingRow() );
+    public void actionPerformed(ActionEvent e) {
+        int row = jTable.convertRowIndexToModel( jTable.getEditingRow() );
         fireEditingStopped();
 
-        //  Invoke the Action
-
         ActionEvent event = new ActionEvent(
-                table,
+                jTable,
                 ActionEvent.ACTION_PERFORMED,
                 "" + row);
         action.actionPerformed(event);
     }
 
-    public void mousePressed(MouseEvent e)
-    {
-        if (table.isEditing()
-                &&  table.getCellEditor() == this)
+    public void mousePressed(MouseEvent e) {
+        if (jTable.isEditing()
+                &&  jTable.getCellEditor() == this)
             isButtonColumnEditor = true;
     }
 
-    public void mouseReleased(MouseEvent e)
-    {
+    public void mouseReleased(MouseEvent e) {
         if (isButtonColumnEditor
-                &&  table.isEditing())
-            table.getCellEditor().stopCellEditing();
+                &&  jTable.isEditing())
+            jTable.getCellEditor().stopCellEditing();
 
         isButtonColumnEditor = false;
     }

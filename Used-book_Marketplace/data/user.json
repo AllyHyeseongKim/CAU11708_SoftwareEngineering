@@ -1,1 +1,42 @@
-[{"password":"12345","emailAddress":"ally@cau.ac.kr","phoneNumber":"01054027381","name":"AllyHyeseongKim","id":"ally1","status":"activated"},{"password":"12345","emailAddress":"ally@gmail.com","phoneNumber":"01000000000","name":"AllyHyeseongKim","id":"ally3","status":"deactivated"},{"password":"12345","emailAddress":"ally@icloud.com","phoneNumber":"01022222222","name":"AllyHyeseongKim","id":"ally2","status":"activated"},{"password":"12345","emailAddress":"ally@naver.com","phoneNumber":"01033333333","name":"AllyKim","id":"ally4","status":"activated"}]
+[
+  {
+    "password":"12345",
+    "emailAddress":"ally@cau.ac.kr",
+    "phoneNumber":"01054027381",
+    "name":"AllyHyeseongKim",
+    "id":"ally1",
+    "status":"deactivated"
+  },
+  {
+    "password":"12345",
+    "emailAddress":"ally@gmail.com",
+    "phoneNumber":"01000000000",
+    "name":"AllyHyeseongKim",
+    "id":"ally3",
+    "status":"deactivated"
+  },
+  {
+    "password":"12345",
+    "emailAddress":"ally@icloud.com",
+    "phoneNumber":"01022222222",
+    "name":"AllyHyeseongKim",
+    "id":"ally2",
+    "status":"activated"
+  },
+  {
+    "password":"12345",
+    "emailAddress":"ally@naver.com",
+    "phoneNumber":"01033333333",
+    "name":"AllyKim",
+    "id":"ally4",
+    "status":"activated"
+  },
+  {
+    "password":"12345",
+    "emailAddress":"ally5@cau.ac.kr",
+    "phoneNumber":"01055555555",
+    "name":"AllyKim",
+    "id":"ally5",
+    "status":"activated"
+  }
+]

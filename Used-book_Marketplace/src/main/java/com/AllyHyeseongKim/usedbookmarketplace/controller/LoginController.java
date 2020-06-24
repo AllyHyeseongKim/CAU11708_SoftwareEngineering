@@ -54,7 +54,6 @@ public class LoginController implements ActionListener {
                 new AdminController(this.userList);
             }
         } else if (isRegisteredUser(id, password) && isActivated(id)) {
-            System.out.println("SUCCESS: Login to User.");
             int okButton = JOptionPane.DEFAULT_OPTION;
             int result = JOptionPane.showConfirmDialog(null, "SUCCESS: Login to User.", "Success Message", okButton, JOptionPane.PLAIN_MESSAGE);
             if (result == JOptionPane.OK_OPTION || result == JOptionPane.CLOSED_OPTION) {
@@ -62,7 +61,6 @@ public class LoginController implements ActionListener {
                 new UserController(id, this.userList);
             }
         } else {
-            System.out.println("FAILED: User not found.");
             JOptionPane.showMessageDialog(null, "FAILED: User not found.", "Error Message", JOptionPane.PLAIN_MESSAGE);
         }
     }

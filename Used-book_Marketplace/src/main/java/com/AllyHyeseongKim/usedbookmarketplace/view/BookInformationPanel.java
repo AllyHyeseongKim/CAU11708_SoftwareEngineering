@@ -1,6 +1,5 @@
 package com.AllyHyeseongKim.usedbookmarketplace.view;
 
-import com.AllyHyeseongKim.usedbookmarketplace.view.ButtonColumn;
 import com.AllyHyeseongKim.usedbookmarketplace.model.Book;
 import com.AllyHyeseongKim.usedbookmarketplace.model.User;
 

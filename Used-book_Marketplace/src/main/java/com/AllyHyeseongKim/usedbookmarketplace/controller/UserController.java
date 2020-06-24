@@ -152,24 +152,27 @@ public class UserController implements ChangeListener, ActionListener {
                 } else {
                     input = JOptionPane.showInputDialog("ENTER ISBN: No recommendation found.\nIf you don't want to enter the ISBN number, just click the Cancel button.", "ISBN");
                 }
-                book.setSellerId(this.userId);
-                book.setStatus(book.getStatus());
                 if (input != null) {
-                    book.setISBN(input);
-                } else {
-                    book.setISBN("");
+                    JOptionPane.showMessageDialog(null, "SUCCESS: Book added.", "Success Message", JOptionPane.PLAIN_MESSAGE);
+                    book.setSellerId(this.userId);
+                    book.setStatus(book.getStatus());
+                    if (input != null) {
+                        book.setISBN(input);
+                    } else {
+                        book.setISBN("");
+                    }
+                    this.bookList = addBook(book);
+
+                    BookListFile bookListFile = new BookListFile("data/book.json");
+                    bookListFile.writeJSON(this.bookList);
+
+                    this.addBookPanel.titleTextField.setText("");
+                    this.addBookPanel.authorTextField.setText("");
+                    this.addBookPanel.publisherTextField.setText("");
+                    this.addBookPanel.yearTextField.setText("");
+                    this.addBookPanel.priceTextField.setText("");
+                    this.addBookPanel.statusComboBox.setSelectedItem("Excellent");
                 }
-                this.bookList = addBook(book);
-
-                BookListFile bookListFile = new BookListFile("data/book.json");
-                bookListFile.writeJSON(this.bookList);
-
-                this.addBookPanel.titleTextField.setText("");
-                this.addBookPanel.authorTextField.setText("");
-                this.addBookPanel.publisherTextField.setText("");
-                this.addBookPanel.yearTextField.setText("");
-                this.addBookPanel.priceTextField.setText("");
-                this.addBookPanel.statusComboBox.setSelectedItem("Excellent");
             }
         }
     }

@@ -7,13 +7,15 @@ import com.AllyHyeseongKim.usedbookmarketplace.view.BookInformationPanel;
 import com.AllyHyeseongKim.usedbookmarketplace.view.UserInformationPanel;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 
-public class AdminController implements ActionListener {
+public class AdminController implements ChangeListener, ActionListener {
     private AdminView adminView;
 
     private BookInformationPanel bookInformationPanel;
@@ -80,7 +82,17 @@ public class AdminController implements ActionListener {
         this.userInformationPanel = new UserInformationPanel(this.userList, this.bookList, this.deleteUserAction, this.changeStatusAction);
         this.adminView = new AdminView(this.bookInformationPanel, this.userInformationPanel);
 
+        this.adminView.adminTab.addChangeListener(this);
         this.adminView.searchButton.addActionListener(this);
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        JTabbedPane tabbedPane = (JTabbedPane) e.getSource();
+        int selectedIndex = tabbedPane.getSelectedIndex();
+        if (selectedIndex == 0) {
+            updateBooks();
+        }
     }
 
     @Override
@@ -88,6 +100,15 @@ public class AdminController implements ActionListener {
         if (e.getSource().equals(this.adminView.searchButton)) {
             search();
         }
+    }
+
+    private void updateBooks() {
+        adminView.searchBookPanel.removeAll();
+        this.bookInformationPanel = new BookInformationPanel(this.bookList, this.deleteBookAction);
+        adminView.bookInformationPanel = this.bookInformationPanel;
+        adminView.addBookManagementPanel();
+        adminView.searchBookPanel.revalidate();
+        adminView.searchBookPanel.repaint();
     }
 
     private void search() {
@@ -159,28 +180,27 @@ public class AdminController implements ActionListener {
     }
 
     private void deleteUser(int index) {
-        BookListFile bookListFile = new BookListFile("data/book.json");
-        UserListFile userListFile = new UserListFile("data/user.json");
-
         User user = this.userList.get(index);
 
-        if (user.getStatus() == "deactivated") {
+        if (user.getStatus().equals("deactivated")) {
             try {
                 for (int i = 0; i < this.bookList.size(); i++) {
-                    if (this.bookList.get(i).getSellerId() == user.getId()) {
+                    if (this.bookList.get(i).getSellerId().equals(user.getId())) {
                         this.bookList.remove(i);
                         i--;
                     }
                 }
                 this.userList.remove(index);
+
+                BookListFile bookListFile = new BookListFile("data/book.json");
+                UserListFile userListFile = new UserListFile("data/user.json");
+                bookListFile.writeJSON(this.bookList);
+                userListFile.writeJSON(this.userList);
             } catch (ArrayIndexOutOfBoundsException e) {
                 e.printStackTrace();
                 throw e;
             }
         }
-
-        bookListFile.writeJSON(this.bookList);
-        userListFile.writeJSON(this.userList);
     }
 
     private void changeStatus(int index) {

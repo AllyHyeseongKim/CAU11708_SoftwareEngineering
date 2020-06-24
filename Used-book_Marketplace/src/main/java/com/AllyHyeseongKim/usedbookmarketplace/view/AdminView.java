@@ -7,7 +7,6 @@ import java.awt.*;
 public class AdminView extends JFrame {
     public JPanel searchBookPanel = new JPanel();
     public JPanel searchPanel = new JPanel();
-    private JPanel bookManagementPanel = new JPanel();
     private JPanel userManagementPanel = new JPanel();
 
     public BookInformationPanel bookInformationPanel;
@@ -46,7 +45,7 @@ public class AdminView extends JFrame {
         this.add(adminTab, "Center");
     }
 
-    private void addBookManagementPanel() {
+    public void addBookManagementPanel() {
         searchBookPanel.setLayout(new BorderLayout());
         searchBookPanel.setSize(1330, 1000);
         addSearchPanel();
